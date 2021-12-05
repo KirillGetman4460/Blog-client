@@ -2,7 +2,7 @@ const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-
+const { NetlifyPlugin } = require('netlify-webpack-plugin');
 
 module.exports = {
     mode:"production",
@@ -21,6 +21,7 @@ module.exports = {
         new HTMLWebpackPlugin({
             template: './index.html',
         }),
+        new NetlifyPlugin({}),
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({
           filename: 'styles.css'

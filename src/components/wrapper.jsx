@@ -5,23 +5,23 @@ import PostList from "./postList.jsx"
 import PostPage from "./postPage.jsx"
 import Auth from "./auth.jsx"
 import Header from "./header.jsx"
-import UserPage from "./UserPage.jsx"
+import userPage from "./userPage.jsx"
 import ChangePassword from './changePassword.jsx'
 
 const Wrapper = ()=>{    
     return(
         <div className="wrapper">
             <Router>
-            <Header/>
+            <Header/>   
                 <Switch>
                     <Route exact path="/">
                         <PostList/>
                     </Route>  
                     <Route path="/auth">
-                        {JSON.parse(localStorage.getItem("token")) ? <Redirect to="/UserPage" /> : <Auth/>}
+                        {JSON.parse(localStorage.getItem("token")) ? <Redirect to="/userPage" /> : <Auth/>}
                     </Route> 
-                    <Route path="/UserPage">
-                        <UserPage/>
+                    <Route path="/userPage">
+                        <userPage/>
                     </Route> 
                     <Route path="/post">
                         <Post/>
