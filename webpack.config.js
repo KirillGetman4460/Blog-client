@@ -19,6 +19,7 @@ module.exports = {
 
     plugins:[
         new HTMLWebpackPlugin({
+            title:"blog",
             template: './index.html',
         }),
         new NetlifyPlugin({}),
@@ -36,6 +37,7 @@ module.exports = {
           },
           {
             test: /\.(png|jpe?g|gif|svg)$/i,
+            type:'asset/resourse',
             loader: 'file-loader',
             options: {
               outputPath: 'images',
@@ -85,6 +87,7 @@ module.exports = {
               }
             }
           }
+          
         ]
     },
 
@@ -92,6 +95,7 @@ module.exports = {
         static:{
             directory: path.resolve(__dirname, 'src')
         },
+        contentBase: "./build",
         historyApiFallback: true,
         compress: true
     },
