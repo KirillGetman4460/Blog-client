@@ -11,10 +11,10 @@ const Register = ()=>{
 
     const registerUser = async(data)=>{
         try {
-            await axios.post('http://localhost:3000/auth/register',{name:data.name,email:data.email,password:data.password})
+            await axios.post(' https://blog-server-kirill.herokuapp.com/auth/register',{name:data.name,email:data.email,password:data.password})
                 .then(res => {
                     setMessage(res.data.message)
-                    setSuccessful(true)             
+                    setSuccessful(true)           
                 })
         } catch (error) {
             console.log(error);

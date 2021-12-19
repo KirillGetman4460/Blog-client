@@ -49,18 +49,9 @@ const UserPage = () =>{
     const logoutuUser = () =>{
         dispatch({ type:"CLEAR_USER"})
         localStorage.removeItem('token')
-        //history.push('/')
-        //history.go(0)
+        history.push('/')
+        history.go(0)
     }
-    useEffect(async()=>{
-        try {
-            await axios.get('http://localhost:3000/auth/users',{headers: {Authorization:`Bearer ${token}`}})
-                      
-        } catch (error) {
-            console.log(error);
-        }  
-        
-    },[])
     return(
         <div className="user__page">
             <div className="user__page__title">

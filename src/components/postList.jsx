@@ -1,4 +1,4 @@
-import React,{useEffect,useState} from "react";
+import React,{useEffect} from "react";
 import {Link} from "react-router-dom";
 import {useSelector,useDispatch} from 'react-redux'
 import Loader from "./loader.jsx"
@@ -9,9 +9,8 @@ const PostList = () =>{
 
     const posts = useSelector(state => state.posts)
 
-    useEffect(() =>{
-        dispatch({type:"GET_POSTS"})
-       
+    useEffect(() =>{     
+        dispatch({type:"GET_POSTS"}) 
     },[])
     return(
         <div className="post__list"> 
